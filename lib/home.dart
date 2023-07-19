@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //future builder shows a "loading" option till the data gets from the server. It just imporves the UX.
+    //Future builder shows a "loading" option till the data gets from the server. It just imporves the UX.
     return FutureBuilder(
         future: getData(),
         builder: (context, snapshot) {
