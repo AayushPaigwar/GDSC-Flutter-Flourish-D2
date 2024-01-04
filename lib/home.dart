@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:learning_apis/model.dart';
+import './model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,4 +1,4 @@
-package com.example.learning_apis
+package com.example.api_day
 
 import io.flutter.embedding.android.FlutterActivity
 
