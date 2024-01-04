@@ -16,56 +16,58 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //Future builder shows a "loading" option till the data gets from the server. It just imporves the UX.
+    //Future builder helps to fetch data till the data gets from the server.
     return FutureBuilder(
-        future: getData(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ListView.builder(
-              itemCount: samplePosts.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                      color: Colors.greenAccent,
-                      borderRadius: BorderRadius.circular(10)),
-                  height: 130,
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'User id: ${samplePosts[index].userId}',
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      Text(
-                        'ID: ${samplePosts[index].id}',
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      Text(
-                        'Title: ${samplePosts[index].title}',
-                        maxLines: 1,
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      Text(
-                        'Body: ${samplePosts[index].body}',
-                        maxLines: 1,
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-          } else {
-            return const Center(child: CircularProgressIndicator());
-          }
-        });
+      future: getData(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return ListView.builder(
+            itemCount: samplePosts.length,
+            itemBuilder: (context, index) {
+              return Container(
+                decoration: BoxDecoration(
+                    color: Colors.greenAccent,
+                    borderRadius: BorderRadius.circular(10)),
+                height: 130,
+                margin:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'User id: ${samplePosts[index].userId}',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    Text(
+                      'ID: ${samplePosts[index].id}',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    Text(
+                      'Title: ${samplePosts[index].title}',
+                      maxLines: 1,
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    Text(
+                      'Body: ${samplePosts[index].body}',
+                      maxLines: 1,
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
+    );
   }
 
+//This function helps to fetch data from the server.
   Future<List<SamplePosts>> getData() async {
     final response =
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));

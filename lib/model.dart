@@ -1,7 +1,4 @@
-// To parse this JSON data, do
-//
-//     final samplePosts = samplePostsFromJson(jsonString);
-
+//Automatic Generated Model Class
 import 'dart:convert';
 
 List<SamplePosts> samplePostsFromJson(String str) => List<SamplePosts>.from(
@@ -36,6 +33,4 @@ class SamplePosts {
         "title": title,
         "body": body,
       };
-
-  static void add(SamplePosts samplePosts) {}
 }
