@@ -15,7 +15,7 @@
   <img src="SS.png" alt="Screenshot" width= "700">
 </p>
 
-
+## [API Key Link](https://jsonplaceholder.typicode.com/posts)   | [API Testing](https://web.postman.co/)  |  [API Model Generator](https://app.quicktype.io/)
 
 ## Step to Use
 
