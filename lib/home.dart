@@ -12,6 +12,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  //List to store the data from the API.
   List<SamplePosts> samplePosts = [];
 
   @override
